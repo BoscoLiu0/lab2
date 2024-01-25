@@ -1,4 +1,4 @@
-class SimpleStringServer {
+class StringServer {
 
     private static String runningString = "";
 
