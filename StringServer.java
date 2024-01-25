@@ -1,6 +1,7 @@
 class StringServer {
 
     private static String runningString = "";
+    private static int messageCount = 0;
 
     public static void main(String[] args) {
         try {
@@ -25,8 +26,9 @@ class StringServer {
             String message = getMessageFromRequest(request);
 
             if (message != null && !message.isEmpty()) {
+                messageCount++;
                 runningString += (runningString.isEmpty() ? "" : "\n") +
-                        (runningString.split("\n").length + 1) + ". " + message;
+                        messageCount + ". " + message;
             }
 
             String response = "HTTP/1.1 200 OK\r\n\r\n" + runningString;
@@ -40,6 +42,8 @@ class StringServer {
     }
 
     private static String getMessageFromRequest(String request) {
+        // Extract the message parameter from the request
+        // This is a simple example and may need improvement for production use
         if (request != null && request.startsWith("GET /add-message")) {
             int startIndex = request.indexOf("s=");
             if (startIndex != -1) {
