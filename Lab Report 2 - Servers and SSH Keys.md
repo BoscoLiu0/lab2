@@ -2,7 +2,53 @@
 
 # Part 1:
 ##  code for StringServer：
-> 
+```
+import java.io.IOException;
+import java.net.URI;
+
+class Handler implements URLHandler {
+    int num = 0;
+    public String handleRequest(URI url) {
+        if (url.getPath().equals("/")) {
+            return String.format("Yanhua's Number: %d", num);
+        } else if (url.getPath().equals("/increment")) {
+            num += 1;
+            return String.format("Number incremented!");
+        } else {
+            if (url.getPath().contains("/add")) {
+                String[] parameters = url.getQuery().split("=");
+                if (parameters[0].equals("count")) {
+                    num += Integer.parseInt(parameters[1]);
+                    return String.format("Number increased by %s! It's now %d", parameters[1], num);
+                }
+            }
+            return "404 Not Found!";
+        }
+    }
+}
+
+class NumberServer {
+    public static void main(String[] args) throws IOException {
+        if(args.length == 0){
+            System.out.println("Missing port number! Try any number between 1024 to 49151");
+            return;
+        }
+
+        int port = Integer.parseInt(args[0]);
+
+        Server.start(port, new Handler());
+    }
+}
+```
+1.Hello
+
 ![image](https://github.com/Boscoliu1994/lab3/blob/main/Hello.jpg)
+### a.Which methods in your code are called?
+handleRequest method.
+### b.What are the relevant arguments to those methods, and the values of any relevant fields of the class?
+
+
+2.How are you
+
 ![image](https://github.com/Boscoliu1994/lab3/blob/main/Howareyou.jpg)
 
