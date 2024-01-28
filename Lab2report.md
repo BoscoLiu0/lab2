@@ -1,4 +1,4 @@
-![image](https://github.com/Boscoliu1994/lab3/blob/main/Title.jpg)
+![image](./Title.jpg)
 
 # Part 1:
 ##  code for StringServer：
@@ -36,11 +36,11 @@ class NumberServer {
 ```
 1.Hello
 
-![image](https://github.com/Boscoliu1994/lab3/blob/main/Hello.jpg)
+![image](./Hello.jpg)
 
 2.How are you
 
-![image](https://github.com/Boscoliu1994/lab3/blob/main/Howareyou.jpg)
+![image](./Howareyou.jpg)
 ### a.Which methods in your code are called?
 handleRequest method.
 ### b.What are the relevant arguments to those methods, and the values of any relevant fields of the class?
@@ -51,19 +51,19 @@ Path: ```/add```Query Parameters: ```count=5``` considering the example URL: `nu
 # Part 2:
 ### The path to the private key for your SSH key for logging into ieng6 (on your computer or on the home directory of the lab computer)
 
-![image](https://github.com/Boscoliu1994/lab3/blob/main/part3-1.jpg)
+![image](./part3-1.jpg)
 
 The absolute path to the private key is in `C:\Users\16264\.ssh\id_rsa.pub`
 
 ### The absolute path to the public key for your SSH key for logging into ieng6 (this is the one you copied to your account on ieng6, so it should be a path on ieng6's file system)
 
-![image](https://github.com/Boscoliu1994/lab3/blob/main/part3-2.jpg)
+![image](./part3-2.jpg)
 
 The absolute path to the public key is in `/home/linux/ieng6/oce/37/yal144/.ssh`.
 
 ### A terminal interaction where you log into ieng6 with your course-specific account without being asked for a password.
 
-![image](https://github.com/Boscoliu1994/lab3/blob/main/part3-3.jpg)
+![image](./part3-3.jpg)
 
 use `ssh-copy-id myemail@ieng6.ucsd.edu` copy to `C:\Users\16264\.ssh\known_hosts`.
 
