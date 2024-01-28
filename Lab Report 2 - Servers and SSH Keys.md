@@ -49,6 +49,15 @@ arguments are the URL and UCI，The UCI includes the path and query. Relevant fi
 Path: ```/add```Query Parameters: ```count=5``` considering the example URL: `num` `http://localhost:8080/add?count=5` and so on. If there are subsequent requests with different "count" values, the  field will continue to be updated accordingly. If the request doesn't meet the specified conditions (e.g., incorrect path or parameter name), the  field remains unchanged.`num` `num`.
 
 # Part 2:
+### The path to the private key for your SSH key for logging into ieng6 (on your computer or on the home directory of the lab computer)
 
+![image](https://github.com/Boscoliu1994/lab3/blob/main/part3-1.jpg)
+The absolute path to the private key is in `C:\Users\16264\.ssh\id_rsa.pub`
+
+### The absolute path to the public key for your SSH key for logging into ieng6 (this is the one you copied to your account on ieng6, so it should be a path on ieng6's file system)
+![image](https://github.com/Boscoliu1994/lab3/blob/main/part3-2.jpg)
+The absolute path to the public key is in /home/linux/ieng6/cs15lfa23/cs15lfa23gw/.ssh/authorized_keys
+
+![image](https://github.com/Boscoliu1994/lab3/blob/main/part3-3.jpg)
 
 
