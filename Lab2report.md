@@ -56,37 +56,46 @@ public class ChatServer {
 }
 ```
 1.Hello
-
+![image](./Hi.jpg)
 
 
 2.How are you
 
+![image](./HAU.jpg)
 
 ### a.Which methods in your code are called?
-handleRequest method.
+MessageHandler method.
 ### b.What are the relevant arguments to those methods, and the values of any relevant fields of the class?
-arguments are the URL and UCI，The UCI includes the path and query. Relevant fields are ```String s``` and ```int num```. ```String s``` is used to add and hold strings from add-messages. ```int num``` is used to show how many single strings we put.
+Arguments: String query from the URL, including s (message) and user (username).
+Relevant Fields:
+String chatHistory for accumulating chat messages.
+No int num in provided context; instead, chatHistory holds and accumulates messages.
 ### c.How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
-Path: ```/add```Query Parameters: ```count=5``` considering the example URL: `num` `http://localhost:8080/add?count=5` and so on. If there are subsequent requests with different "count" values, the  field will continue to be updated accordingly. If the request doesn't meet the specified conditions (e.g., incorrect path or parameter name), the  field remains unchanged.`num` `num`.
+Path: /add-message
+Query Parameters: s=<message>&user=<user>
+Example URL: http://localhost:8080/add-message?s=Hello&user=jpolitz
+Field Updates:
+chatHistory is updated with each request to append <user>: <message>\n. For the given URL, it appends "jpolitz: Hello\n" to chatHistory.
+If there are subsequent requests, chatHistory updates with each new message. If a request does not match the path or lacks required parameters, chatHistory remains unchanged.
 
 # Part 2:
 ### The path to the private key for your SSH key for logging into ieng6 (on your computer or on the home directory of the lab computer)
 
 ![image](./part3-1.jpg)
 
-The absolute path to the private key is in `C:\Users\16264\.ssh\id_rsa.pub`
+The absolute path to the private key is in `C:\Users\16264\.ssh\id_rsa`
 
 ### The absolute path to the public key for your SSH key for logging into ieng6 (this is the one you copied to your account on ieng6, so it should be a path on ieng6's file system)
 
 ![image](./part3-2.jpg)
 
-The absolute path to the public key is in `/home/linux/ieng6/oce/37/yal144/.ssh`.
+The absolute path to the public key is in `/home/linux/ieng6/oce/37/yal144/.ssh\id_rsa.pub`
 
 ### A terminal interaction where you log into ieng6 with your course-specific account without being asked for a password.
 
 ![image](./part3-3.jpg)
 
-use `ssh-copy-id myemail@ieng6.ucsd.edu` copy to `C:\Users\16264\.ssh\known_hosts`.
+use `ssh-copy-id myemail@ieng6.ucsd.edu` copy to `C:\Users\16264\.ssh\known_hosts`
 
 # part 3
 Using Linux for the first time, I knew nothing about commands, only cd, ls, pwd, etc. I also learned how to remote link: URLs and URIs. I also learned how to link remotely: URLs and URIs, which was very helpful, and I think this knowledge will help me in the future.
