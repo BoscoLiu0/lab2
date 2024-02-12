@@ -57,11 +57,11 @@ public class ChatServer {
 ```
 1.Hello
 
-![image](./Hello.jpg)
+
 
 2.How are you
 
-![image](./Howareyou.jpg)
+
 ### a.Which methods in your code are called?
 handleRequest method.
 ### b.What are the relevant arguments to those methods, and the values of any relevant fields of the class?
