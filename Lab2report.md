@@ -83,7 +83,7 @@ If there are subsequent requests, chatHistory updates with each new message. If 
 
 ![image](./part-3-1.jpg)
 
-The absolute path to the private key is in `C:\Users\16264\.ssh\id_rsa`
+The absolute path to the private key is in `/Users/boscoliu/.ssh/id_rsa`
 
 ### The absolute path to the public key for your SSH key for logging into ieng6 (this is the one you copied to your account on ieng6, so it should be a path on ieng6's file system)
 
