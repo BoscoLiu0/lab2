@@ -3,34 +3,55 @@
 # Part 1:
 ##  code for StringServer：
 ```
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
+import com.sun.net.httpserver.HttpServer;
 import java.io.IOException;
-import java.net.URI;
+import java.io.OutputStream;
+import java.net.InetSocketAddress;
+import java.util.HashMap;
+import java.util.Map;
 
-class Handler implements URLHandler {
-    int num = 0;
-    public String handleRequest(URI url) {
-            if (url.getPath().contains("/add")) {
-                String[] parameters = url.getQuery().split("=");
-                if (parameters[0].equals("count")) {
-                    num += Integer.parseInt(parameters[1]);
-                    return String.format("Number increased by %s! It's now %d", parameters[1], num);
+public class ChatServer {
+    private static String chatHistory = "";
+
+    public static void main(String[] args) throws IOException {
+        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+        server.createContext("/add-message", new MessageHandler());
+        server.setExecutor(null); // creat the first executor
+        server.start();
+        System.out.println("Server started on port 8080");
+    }
+
+    static class MessageHandler implements HttpHandler {
+        @Override
+        public void handle(HttpExchange exchange) throws IOException {
+            if ("GET".equals(exchange.getRequestMethod())) {
+                Map<String, String> queryParams = queryToMap(exchange.getRequestURI().getQuery());
+                String user = queryParams.get("user");
+                String message = queryParams.get("s");
+                chatHistory += user + ": " + message + "\n";
+                exchange.sendResponseHeaders(200, chatHistory.getBytes().length);
+                OutputStream os = exchange.getResponseBody();
+                os.write(chatHistory.getBytes());
+                os.close();
+            } else {
+                exchange.sendResponseHeaders(405, -1); // 405 not allow 
+            }
+        }
+
+        private Map<String, String> queryToMap(String query) {
+            Map<String, String> result = new HashMap<>();
+            for (String param : query.split("&")) {
+                String[] entry = param.split("=");
+                if (entry.length > 1) {
+                    result.put(entry[0], entry[1]);
+                } else {
+                    result.put(entry[0], "");
                 }
             }
-            return "404 Not Found!";
+            return result;
         }
-    }
-}
-
-class NumberServer {
-    public static void main(String[] args) throws IOException {
-        if(args.length == 0){
-            System.out.println("Missing port number! Try any number between 1024 to 49151");
-            return;
-        }
-
-        int port = Integer.parseInt(args[0]);
-
-        Server.start(port, new Handler());
     }
 }
 ```
