@@ -81,15 +81,15 @@ If there are subsequent requests, chatHistory updates with each new message. If 
 # Part 2:
 ### The path to the private key for your SSH key for logging into ieng6 (on your computer or on the home directory of the lab computer)
 
-![image](./part3-1.jpg)
+![image](./part-3-1.jpg)
 
 The absolute path to the private key is in `C:\Users\16264\.ssh\id_rsa`
 
 ### The absolute path to the public key for your SSH key for logging into ieng6 (this is the one you copied to your account on ieng6, so it should be a path on ieng6's file system)
 
-![image](./part3-2.jpg)
+![image](./part-3-2.jpg)
 
-The absolute path to the public key is in `/home/linux/ieng6/oce/37/yal144/.ssh\id_rsa.pub`
+The absolute path to the public key is in `/home/linux/ieng6/oce/37/yal144/.ssh\authorized_keys`
 
 ### A terminal interaction where you log into ieng6 with your course-specific account without being asked for a password.
 
