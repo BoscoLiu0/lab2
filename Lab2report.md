@@ -93,9 +93,7 @@ The absolute path to the public key is in `/home/linux/ieng6/oce/37/yal144/.ssh\
 
 ### A terminal interaction where you log into ieng6 with your course-specific account without being asked for a password.
 
-![image](./part3-3.jpg)
-
-use `ssh-copy-id myemail@ieng6.ucsd.edu` copy to `C:\Users\16264\.ssh\known_hosts`
+![image](./part-3-3.jpg)
 
 # part 3
 Using Linux for the first time, I knew nothing about commands, only cd, ls, pwd, etc. I also learned how to remote link: URLs and URIs. I also learned how to link remotely: URLs and URIs, which was very helpful, and I think this knowledge will help me in the future.
